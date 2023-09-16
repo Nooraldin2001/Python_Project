@@ -21,3 +21,28 @@ def list_Numbers(x, y):
 print(list_Numbers(5,10))     
          
 
+'''
+(Task 1.3) Create a python function that takes 2 numbers x, y and prints the multiplication table from x to y
+'''
+def list_Mul(a, b):
+    # number_list = [x * y for x in range(1,y+1)]   
+    # return 'This is the multiplication table from x to y: ',number_list
+    for i in range(a, b+1):
+        print("multiplication table for", i)
+        for j in range(1,11):
+            print(i, "*", j, "=", i * j)
+
+print(list_Mul(1,10))
+
+'''
+(Task 1.4) Create a function that takes a sentence and prints the sentence without duplicated words
+'''
+def remove_duplicated_words(listwords):
+    listwords = listwords.split(' ')
+    return set(listwords)  
+
+
+        
+
+
+print(remove_duplicated_words('Create Create a a function function that that takes takes a a a sentence sentence and and prints the sentence without duplicated duplicated duplicated words'))
