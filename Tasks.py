@@ -146,6 +146,32 @@ class Tasks_level_2():
         nameslenght = [len(name) for name in names ]
         #Uppernames = Uppernames.join(" ")
         return nameslenght
+    
+    '''
+    6. Unpack the list in
+    7. a,b , a= the first index , b = rest of the list
+    '''
+    def slicing_7(self, list):
+        a = list[:1]
+        b = list[1:]
+        return a,b
+
+    '''
+    8. a = the first index , b = the last index
+    '''
+    def slicing_8(self, list):
+        a = list[:1]
+        lastindex = len(list)-1
+        b = [list[lastindex]]
+        return a,b
+    '''
+    9. a = the first index , b = the second index
+    '''
+    def slicing_9(self, list):
+        a = [list[0]]
+        b = [list[1]]
+        return a,b
+
 
 
 
@@ -153,6 +179,9 @@ class Tasks_level_2():
 
 task2 = Tasks_level_2()                  #You can just remove the comment and run the code 
 Names = ['mahmoud','farida','ali','hassan','mohamed','khaled','taha']
+#print(task2.slicing_9(Names))
+#print(task2.slicing_8(Names))
+#print(task2.slicing_7(Names))
 #print(task2.Words_Lenght(Names))
 #print(task2.Word_Contains_2A(Names))
 #print(task2.Word_Start_With_T(Names))
