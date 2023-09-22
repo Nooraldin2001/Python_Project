@@ -90,14 +90,6 @@ class Tasks_level_1():
 
 
 
-
-
-
-
-
-
-
-
 class Tasks_level_2():
 
     '''                                  Python Task Level 2 :                                  '''
@@ -173,12 +165,8 @@ class Tasks_level_2():
         return a,b
 
 
-
-
-
-
-task2 = Tasks_level_2()                  #You can just remove the comment and run the code 
-Names = ['mahmoud','farida','ali','hassan','mohamed','khaled','taha']
+#task2 = Tasks_level_2()                  #You can just remove the comment and run the code 
+#Names = ['mahmoud','farida','ali','hassan','mohamed','khaled','taha']
 #print(task2.slicing_9(Names))
 #print(task2.slicing_8(Names))
 #print(task2.slicing_7(Names))
@@ -187,6 +175,36 @@ Names = ['mahmoud','farida','ali','hassan','mohamed','khaled','taha']
 #print(task2.Word_Start_With_T(Names))
 #print(task2.Tranform_To_Upper(Names))
 #print(task2.Words_Contains_A(Names))
+
+from datetime import datetime, timedelta
+
+class Task_level_3():
+        '''                             Python Task Level 1:                                  '''
+
+        """
+            (Task 3.1)Build a countdown calculator. Write some code that can take two dates as input, and then calculate the amount of time between them
+        """
+        def dates_countdown(self, startdate, enddate):
+
+            datelist = []
+
+
+            dates = startdate
+            while dates <= enddate:
+                datelist.append(dates)
+                dates += timedelta(days=1)
+            
+            calculatedDates = [date.strftime("%Y-%m-%d") for date in datelist]
+            return calculatedDates
+        
+task_3 = Task_level_3()
+
+start = input("Enter a start date (YYYY-MM-DD)")
+end = input("Enter a end date (YYYY-MM-DD)")
+
+print(task_3.dates_countdown(datetime.strptime(start, "%Y-%m-%d"),datetime.strptime(end, "%Y-%m-%d")))
+
+
 
 
 
