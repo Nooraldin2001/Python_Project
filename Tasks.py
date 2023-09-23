@@ -177,6 +177,7 @@ class Tasks_level_2():
 #print(task2.Words_Contains_A(Names))
 
 from datetime import datetime, timedelta
+import re
 
 class Task_level_3():
         '''                             Python Task Level 1:                                  '''
@@ -197,12 +198,103 @@ class Task_level_3():
             calculatedDates = [date.strftime("%Y-%m-%d") for date in datelist]
             return calculatedDates
         
+
+        '''
+            (Task 3.1)Make a temperature/measurement converter. Write a script that can convert Fahrenheit to Celcius and back, or inches to centimeters and back, etc in 3 different ways
+        '''
+        def measures(self, number, mesure):
+
+            if mesure == "Celcius To Fahrenheit":
+                number = (number - 32)*5/9
+
+            elif mesure == "Fahrenheit To Celcius":
+                number = (number * 9/5)+32
+            
+            elif mesure == "Inches To Centimeters":
+                number = number * 2.54
+            
+            elif mesure == "Centimeters To Inches":
+                number = number / 2.54
+
+            elif mesure == "Pounds To Kilograms":
+                number = number * 0.453592
+            
+            elif mesure == "Pounds To Kilograms":
+                number = number / 0.453592
+
+
+            return print(mesure , '=', number)
+        
+        '''
+        (Task 3.2)Build an email slicer : create a function that takes an email as input and retrieve the username and domain of the email
+
+        '''
+        def email_slicer(self, email):
+            pattern = '@'
+            split_email = re.split(pattern,email)
+            username = split_email[0]
+            domain = split_email[1]
+            return print('your domain and username is ', username, domain)
+        
+        '''
+        (Task 3.3)Currency converter : create a python script that takes a money with currency sign and convert it to some other currencies , the code should be like the game we did before
+        '''
+class Currency_converter:
+    def __init__(self):
+        self.converted_money = None
+        while True:
+            print('''Welcome to Noor Exchange. Please press Enter to start exchange:
+                 1: From EGP to USD
+                 2: From EGP to Euro
+                 3: From EGP to Dirhams''')
+            
+            convert_mode = int(input("Please insert the mode number: "))
+            money = int(input("Please insert the money: "))
+
+            if convert_mode == 1:
+                self.converted_money = money * 30
+                print('Your money will be after changing to USD:', self.converted_money)
+            elif convert_mode == 2:
+                self.converted_money = money * 40
+                print('Your money will be after changing to Euro:', self.converted_money)
+            elif convert_mode == 3:
+                self.converted_money = money * 10
+                print('Your money will be after changing to Dirhams:', self.converted_money)
+            else:
+                print('Exit')
+                break
+
+            exchange_again = input('press any key to change another currancy or press x to exit ')
+            if exchange_again == 'x': 
+                print('thank you for using noor exchange')
+
+
+
+
+
+# Create an instance of the Currency_converter class
+converter = Currency_converter()
+
+        #def Currency_converter(self, from_currency, to_currency):
+
+        
+
+
+
+
+
+
 task_3 = Task_level_3()
 
-start = input("Enter a start date (YYYY-MM-DD)")
-end = input("Enter a end date (YYYY-MM-DD)")
+#email = input("Enter your email please ")
+#task_3.email_slicer(email)
+#mesures = input("Enter your mesure please ")
+#numbers = int(input("Enter the number you wnat to convert "))
+#print(task_3.measures(numbers, mesures))
 
-print(task_3.dates_countdown(datetime.strptime(start, "%Y-%m-%d"),datetime.strptime(end, "%Y-%m-%d")))
+#start = input("Enter a start date (YYYY-MM-DD)")
+#end = input("Enter a end date (YYYY-MM-DD)")
+#print(task_3.dates_countdown(datetime.strptime(start, "%Y-%m-%d"),datetime.strptime(end, "%Y-%m-%d")))
 
 
 
